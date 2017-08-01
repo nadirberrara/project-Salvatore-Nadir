@@ -22,4 +22,14 @@ router.get("/login", (req, res, next) => {
   res.render("auth/login");
 });
 
+router.post(
+  "/login",
+  passport.authenticate("local-login", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+    passReqToCallback: true
+  })
+);
+
 module.exports = router;

@@ -12,6 +12,7 @@ const MongoStore = require("connect-mongo")(session);
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/user");
 const bcrypt = require("bcrypt");
+const flash = require("connect-flash");
 
 mongoose.connect("mongodb://localhost/pharticles");
 
@@ -67,7 +68,6 @@ passport.use(
       passReqToCallback: true
     },
     (req, email, password, next) => {
-      console.log("DEBUG email, password", email, password);
       // To avoid race conditions
       process.nextTick(() => {
         User.findOne(
@@ -104,6 +104,33 @@ passport.use(
             }
           }
         );
+      });
+    }
+  )
+);
+
+// login up
+app.use(flash());
+passport.use(
+  "local-login",
+  new LocalStrategy(
+    {
+      usernameField: "email",
+      passReqToCallback: true
+    },
+    (req, emailInput, passwordInput, next) => {
+      User.findOne({ email: emailInput }, (err, user) => {
+        if (err) {
+          return next(err);
+        }
+        if (!user) {
+          return next(null, false, { message: "Incorrect email" });
+        }
+        if (!bcrypt.compareSync(passwordInput, user.password)) {
+          return next(null, false, { message: "Incorrect password" });
+        }
+
+        return next(null, user);
       });
     }
   )
