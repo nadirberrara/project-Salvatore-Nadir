@@ -16,6 +16,16 @@ a {
   margin: 15px 0;
 }
 
+.article-title {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.article-text p {
+  margin: 5px;
+  text-align: justify;
+}
+
 /* ====> HEADER <==== */
 
 .menu {
