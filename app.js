@@ -9,6 +9,9 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
+const LocalStrategy = require("passport-local").Strategy;
+const User = require("./models/user");
+const bcrypt = require("bcrypt");
 
 mongoose.connect("mongodb://localhost/pharticles");
 
@@ -40,6 +43,69 @@ app.use(
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
+);
+
+passport.serializeUser((user, cb) => {
+  cb(null, user.id);
+});
+
+passport.deserializeUser((id, cb) => {
+  User.findOne({ _id: id }, (err, user) => {
+    if (err) {
+      return cb(err);
+    }
+    cb(null, user);
+  });
+});
+
+// Signing Up
+passport.use(
+  "local-signup",
+  new LocalStrategy(
+    {
+      usernameField: "email",
+      passReqToCallback: true
+    },
+    (req, email, password, next) => {
+      // To avoid race conditions
+      process.nextTick(() => {
+        User.findOne(
+          {
+            email: email
+          },
+          (err, user) => {
+            if (err) {
+              return next(err);
+            }
+
+            if (user) {
+              return next(null, false);
+            } else {
+              // Destructure the body
+              const { name } = req.body;
+              const hashPass = bcrypt.hashSync(
+                password,
+                bcrypt.genSaltSync(8),
+                null
+              );
+              const newUser = new User({
+                name,
+                email,
+                password: hashPass
+              });
+
+              newUser.save(err => {
+                if (err) {
+                  next(err);
+                }
+                return next(null, newUser);
+              });
+            }
+          }
+        );
+      });
+    }
+  )
 );
 
 app.use(passport.initialize());
