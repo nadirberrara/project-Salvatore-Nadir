@@ -67,6 +67,7 @@ passport.use(
       passReqToCallback: true
     },
     (req, email, password, next) => {
+      console.log("DEBUG email, password", email, password);
       // To avoid race conditions
       process.nextTick(() => {
         User.findOne(

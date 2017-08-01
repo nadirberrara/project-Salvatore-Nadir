@@ -17,16 +17,6 @@ const userSchema = new Schema({
     required: true,
     type: String
   }
-  // // DO WE NEED THAT ???????
-  // _articlesWritten: {
-  //   type: Schema.Types.ObjectID,
-  //   ref: "Article"
-  // },
-  // // DO WE NEED THAT TOO ??????
-  // _articlesRead: {
-  //   type: Schema.Types.ObjectID,
-  //   ref: "Article"
-  // }
 });
 
 const User = mongoose.model("User", userSchema);
