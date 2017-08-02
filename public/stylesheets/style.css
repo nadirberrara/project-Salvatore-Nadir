@@ -28,51 +28,10 @@ a {
 
 /* ====> HEADER <==== */
 
-.menu {
-  background-color: #00547e;
-  border-bottom: 4px solid #04a3ed;
-  width: 100%;
-  height: auto;
-  padding: 10px 10px 0;
-  position: fixed;
-  margin: 0 0 25px 0;
-  z-index: 1;
-  top: 0;
-}
-
-.menu  .navbar-nav > .active > a {
-  background-color: #04a3ed;
-  color: white;
-  font-weight: bold;
-}
-
-.menu  .navbar-nav > li > a {
-  font-size: 13px;
-  color: white;
-  padding: 10px 35px;
-}
-.menu  .navbar-nav > li > a:hover {
-  background-color: #04a3ed;
-}
-
-.navbar-header > a {
-  font-family: 'Ubuntu Condensed', sans-serif;
-  padding: 0px;
-  margin: 0px;
-  text-decoration: none;
-  color: white;
-  font-size: 25px;
-  padding: 5px 30px;
-}
-.navbar-header > a:hover {
-  text-decoration: none;
-  color: #04a3ed;
-}
-
 /* ====> FOOTER <==== */
 
 .footer-bs {
-  background-color: #00547e;
+  background-color: #696969;
   padding: 60px 40px;
   color: rgba(255, 255, 255, 1.00);
   margin-bottom: 20px;
