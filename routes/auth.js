@@ -25,11 +25,16 @@ router.get("/login", (req, res, next) => {
 router.post(
   "/login",
   passport.authenticate("local-login", {
-    successRedirect: "/",
+    successRedirect: "/read",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
   })
 );
+
+router.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/login");
+});
 
 module.exports = router;
