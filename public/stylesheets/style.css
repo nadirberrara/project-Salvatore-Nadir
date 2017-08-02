@@ -187,3 +187,13 @@ a {
     margin-top: 50px;
   }
 }
+
+.liked-photos {
+  border: 2px solid black;
+  width: 50%;
+}
+
+.posted-photos {
+  border: 2px solid black;
+  width: 50%;
+}
