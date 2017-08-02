@@ -11,6 +11,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/user");
+//const Article = require("./models/article");
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
 
