@@ -4,7 +4,7 @@ const { ensureLoggedIn } = require("connect-ensure-login");
 
 /* GET profile page. */
 router.get("/", ensureLoggedIn("/login"), (req, res, next) => {
-  res.render("profile", { user: req.user });
+  res.render("profile");
 });
 
 module.exports = router;
