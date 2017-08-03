@@ -37,15 +37,4 @@ router.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-router.get("/auth/instagram", passport.authenticate("instagram"));
-
-router.get(
-  "/auth/instagram/callback",
-  passport.authenticate("instagram", { failureRedirect: "/login" }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/profile");
-  }
-);
-
 module.exports = router;
