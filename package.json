@@ -19,11 +19,13 @@
     "express": "~4.15.2",
     "express-ejs-layouts": "^1.1.0",
     "express-session": "^1.15.4",
+    "instagram-node": "^0.5.8",
     "moment": "^2.18.1",
     "mongo": "^0.1.0",
     "mongoose": "^4.11.5",
     "morgan": "~1.8.1",
     "passport": "^0.3.2",
+    "passport-instagram": "^1.0.0",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.4.2"
   }

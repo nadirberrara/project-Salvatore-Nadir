@@ -13,6 +13,11 @@ const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/user");
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
+var instagram = require("instagram-node").instagram();
+var InstagramStrategy = require("passport-instagram").Strategy;
+
+var INSTAGRAM_CLIENT_ID = "08eda503fc124e58aabfee715d3e630f";
+var INSTAGRAM_CLIENT_SECRET = "639182f6a0324249b9b38356a5290fd6";
 
 mongoose.connect("mongodb://localhost/pharticles");
 
@@ -132,6 +137,21 @@ passport.use(
         }
 
         return next(null, user);
+      });
+    }
+  )
+);
+
+passport.use(
+  new InstagramStrategy(
+    {
+      clientID: "08eda503fc124e58aabfee715d3e630f",
+      clientSecret: "639182f6a0324249b9b38356a5290fd6",
+      callbackURL: "http://127.0.0.1:3000/auth/instagram/callback"
+    },
+    function(accessToken, refreshToken, profile, done) {
+      User.findOrCreate({ instagramId: profile.id }, function(err, user) {
+        return done(err, user);
       });
     }
   )

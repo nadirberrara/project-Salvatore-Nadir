@@ -25,7 +25,7 @@ router.get("/login", (req, res, next) => {
 router.post(
   "/login",
   passport.authenticate("local-login", {
-    successRedirect: "/read",
+    successRedirect: "/profile",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
@@ -36,5 +36,16 @@ router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/login");
 });
+
+router.get("/auth/instagram", passport.authenticate("instagram"));
+
+router.get(
+  "/auth/instagram/callback",
+  passport.authenticate("instagram", { failureRedirect: "/login" }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect("/profile");
+  }
+);
 
 module.exports = router;
