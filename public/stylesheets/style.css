@@ -13,7 +13,7 @@ a {
 }
 
 .img-index img {
-  margin: 15px 0;
+  margin: 0 0;
 }
 
 .article-title {
@@ -344,4 +344,8 @@ a {
 /* Active */
 .btn-instagram:active {
   margin: 1px 0 0;
+}
+
+.home-badge {
+  text-align: center;
 }
