@@ -158,8 +158,12 @@ a {
 }
 
 .posted-photos {
-  border: 2px solid black;
-  width: 50%;
+  width: 80%;
+  padding: 10px;
+}
+
+.row {
+  margin-bottom: 10px;
 }
 
 #content {
