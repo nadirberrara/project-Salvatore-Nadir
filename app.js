@@ -14,7 +14,7 @@ const User = require("./models/user");
 //const Article = require("./models/article");
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
-const multer = require("multer");
+// const multer = require("multer");
 
 mongoose.connect("mongodb://localhost/pharticles");
 

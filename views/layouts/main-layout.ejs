@@ -51,12 +51,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+
           <% if (user) {%>
             <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
           <% } else { %>
             <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
             <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           <% } %>
+
           <li><a href="#about"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
 
         </ul>
