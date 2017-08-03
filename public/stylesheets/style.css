@@ -3,7 +3,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-
 .img-group {
   margin-bottom: 25px;
 }
@@ -32,6 +31,11 @@ a {
   font-style: italic;
   font-size: 25px;
   text-align: center;
+}
+
+.emos {
+  margin-top: 100px;
+  padding-left: 40px;
 }
 
 /* ====> FOOTER <==== */
@@ -267,10 +271,6 @@ a {
   text-align: center;
 }
 
-
-
 .home-img {
   margin-top: 10px;
-
-
 }
