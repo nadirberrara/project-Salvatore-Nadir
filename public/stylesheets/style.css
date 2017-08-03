@@ -348,17 +348,8 @@ a {
 
 
 
-.img-index img {
-  max-width: 150px;
+.home-img {
+  margin-top: 10px;
 
-}
-
-.img-index {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  align-content: space-between;
 
 }
