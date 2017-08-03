@@ -142,6 +142,12 @@ passport.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+  console.log("SUPER KEBAB!!!!!!!!!!!!!!!");
+  res.locals.user = req.user;
+  next();
+});
+
 app.use("/", index);
 app.use("/profile", profile);
 app.use("/", auth);

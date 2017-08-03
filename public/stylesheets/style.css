@@ -3,6 +3,11 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+
+.img-group {
+  margin-bottom: 25px;
+}
+
 a {
   color: #00b7ff;
 }
@@ -10,10 +15,6 @@ a {
 .body-elements {
   margin: 75px 15px;
   position: static;
-}
-
-.img-index img {
-  margin: 15px 0;
 }
 
 .article-title {
@@ -260,4 +261,16 @@ a {
 }
 .btn-linkedin:focus {
   color: #fff;
+}
+
+.home-badge {
+  text-align: center;
+}
+
+
+
+.home-img {
+  margin-top: 10px;
+
+
 }
