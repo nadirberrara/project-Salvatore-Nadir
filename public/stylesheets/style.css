@@ -12,10 +12,6 @@ a {
   position: static;
 }
 
-.img-index img {
-  margin: 0 0;
-}
-
 .article-title {
   text-align: center;
   margin: 15px 0;
@@ -348,4 +344,21 @@ a {
 
 .home-badge {
   text-align: center;
+}
+
+
+
+.img-index img {
+  max-width: 150px;
+
+}
+
+.img-index {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
+
 }

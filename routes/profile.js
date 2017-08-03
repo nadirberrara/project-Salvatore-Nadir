@@ -1,9 +1,10 @@
 var express = require("express");
 var router = express.Router();
+const { ensureLoggedIn } = require("connect-ensure-login");
 
 /* GET profile page. */
-router.get("/", (req, res, next) => {
-  res.render("profile");
+router.get("/", ensureLoggedIn("/login"), (req, res, next) => {
+  res.render("profile", { user: req.user });
 });
 
 module.exports = router;
