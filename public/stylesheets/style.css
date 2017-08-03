@@ -27,6 +27,12 @@ a {
   text-align: justify;
 }
 
+#quote {
+  font-style: italic;
+  font-size: 25px;
+  text-align: center;
+}
+
 /* ====> FOOTER <==== */
 
 .footer-bs {
@@ -185,17 +191,22 @@ a {
 .article-text {
   text-align: center;
   font-size: 20px;
+  color: ;
+  background-color: #f3f2f2;
+  padding: 20px;
 }
 
 .emojis {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 1px;
 }
 
 .signature {
   margin: 50px 0;
   text-align: right;
   font-style: italic;
+  font-size: 15px;
 }
 
 .note-emojis {
@@ -207,4 +218,42 @@ a {
 
 .hp {
   text-align: center;
+  margin-top: 80px;
+  margin-bottom: -100px;
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #4c67a1;
+}
+.btn-facebook:hover {
+  color: #fff;
+  background-color: #405d9b;
+}
+.btn-facebook:focus {
+  color: #fff;
+}
+
+.btn-twitter {
+  color: #fff;
+  background-color: #4099ff;
+}
+.btn-twitter:hover {
+  color: #fff;
+  background-color: #4080ff;
+}
+.btn-twitter:focus {
+  color: #fff;
+}
+
+.btn-linkedin {
+  color: #fff;
+  background-color: #007bb6;
+}
+.btn-linkedin:hover {
+  color: #fff;
+  background-color: #006bb6;
+}
+.btn-linkedin:focus {
+  color: #fff;
 }
