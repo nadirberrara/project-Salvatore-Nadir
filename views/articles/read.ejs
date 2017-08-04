@@ -1,25 +1,20 @@
 <div class="container container-article">
 
     <div class="main-article-image">
-      <img src="http://2.bp.blogspot.com/-VzjWxhNbi0Y/UxiR0T8hb_I/AAAAAAAAAXA/NBtmpBKiH8I/s1600/British+cat.jpg">
+      <img src="<%= article.picture %>">
     </div>
 
           <div class="article-text">
 
-            <h1 class="article-title">Quisque non efficitur</h1>
+            <h1 class="article-title"><%= article.title %></h1>
 
 
-              <p>Vestibulum tempus ligula magna, vitae interdum urna facilisis et.</p><br>
-              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam in mi posuere faucibus non faucibus augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam rutrum euismod tempus. Vestibulum id turpis purus. Quisque augue libero, porttitor at diam nec, tincidunt mollis erat. Quisque eu congue magna, tincidunt dictum elit. Quisque rhoncus velit leo, a ultricies nibh ullamcorper eget. Quisque non efficitur lacus. Mauris lectus justo, aliquam in tempor maximus, imperdiet vel purus. Morbi facilisis metus dui, sit amet fermentum sapien ultrices id. Quisque augue erat, ullamcorper vulputate lorem et, sagittis placerat mauris.<p>
-              <br><p id="quote"> "Vestibulum tempus ligula magna"</p><br>
-                <p>Pellentesque congue semper leo ac maximus. Maecenas non nisl sed sapien placerat cursus non nec odio. Praesent ex nulla, tristique eget finibus sed, tincidunt vel lectus. Quisque a vestibulum neque. Suspendisse malesuada porta justo, quis posuere ligula rutrum nec. Aenean faucibus consequat ligula, ac fringilla nulla. Nunc non rutrum eros, sit amet placerat orci. Curabitur tempus vulputate varius. Nam luctus tincidunt lacus a venenatis. Phasellus et iaculis massa, in suscipit ligula. Vestibulum tempus ligula magna, vitae interdum urna facilisis et. Nullam vitae libero a enim laoreet accumsan a a purus. Aenean eros magna, fermentum in ornare sit amet, hendrerit et mi. Praesent accumsan leo nisl, ac sodales felis porta id. Nam quis lacinia dolor. Etiam efficitur bibendum eros, eu laoreet libero tempor dictum.</p><br>
-              <p>n ac magna vitae est interdum posuere. Nulla dictum elit elit, at cursus lacus imperdiet sed. In laoreet ipsum id lectus imperdiet pharetra. In hac habitasse platea dictumst. Donec volutpat quis lacus eget convallis. Sed tincidunt ipsum quis nisl mollis molestie. Mauris semper eros eu ligula sollicitudin venenatis et non ante. Maecenas sed vulputate arcu, eget congue enim. In iaculis venenatis urna, vitae varius nibh egestas nec. Aliquam sed fermentum est.</p>
-
+              <%= article.content %>
 
               <div class="signature">
 
-                 <span>An article by <a href="/profile"><%= article.title %></a></span><br>
-                 <span>Posted the 8.3.17</span>
+                 <span>An article by <a href="/profile"><%= article._creator.name %></a></span><br>
+                 <span>Posted <%= article.createdAt %></span>
 
               </div>
 

@@ -6,22 +6,20 @@ const multer = require("multer");
 const Article = require("../models/article");
 
 router.get("/read/:articleId", ensureLoggedIn("/login"), (req, res, next) => {
-  Article.findOne({/**/}, (err, article) => {
-    console.log(article);
-    res.render("articles/read", {
-      article: req.article
+  Article
+    .findById(req.params.articleId)
+    .populate("_creator")
+    .exec((err, article) => {
+      //console.log(article);
+      res.render("articles/read", {
+        article
+      });
     });
-  });
 });
 
 router.get("/write", ensureLoggedIn("/login"), (req, res, next) => {
   res.render("articles/write");
 });
-
-router.get("/read/kebab-bonanza", ensureLoggedIn("/login"), (req, res, next) => {
-    res.render("articles/kebab-bonanza");
-  }
-);
 
 // Route to upload from project base path
 var upload = multer({ dest: "./public/uploads/" });
