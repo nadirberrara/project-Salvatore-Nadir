@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { ensureLoggedIn } = require("connect-ensure-login");
-const markdown = require("markdown");
 const multer = require("multer");
 const Article = require("../models/article");
 
@@ -20,6 +19,10 @@ router.get(
     res.render("articles/kebab-bonanza");
   }
 );
+
+router.get("/read-dynamic", ensureLoggedIn("/login"), (req, res, next) => {
+  res.render("articles/read-dynamic");
+});
 
 // Route to upload from project base path
 var upload = multer({ dest: "./public/uploads/" });
