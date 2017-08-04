@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require("express");
 var path = require("path");
 var favicon = require("serve-favicon");
@@ -16,7 +17,7 @@ const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
 // const multer = require("multer");
 
-mongoose.connect("mongodb://localhost/pharticles");
+mongoose.connect(process.env.MONGODB_URI);
 
 var index = require("./routes/index");
 var profile = require("./routes/profile");
