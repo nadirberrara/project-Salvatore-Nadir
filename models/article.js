@@ -21,13 +21,12 @@ const articleSchema = new Schema(
       ref: "User",
       required: true
     },
-    // likes: [
-    //   userID: [{
-    //     type: Schema.Types.ObjectId,
-    //     ref: "User",
-    //     required: true
-    //   }]
-    // ],
+    likes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+      }
+    ],
     reactions: [
       {
         reaction: {
@@ -36,8 +35,7 @@ const articleSchema = new Schema(
         },
         userID: {
           type: Schema.Types.ObjectId,
-          ref: "User",
-          required: true
+          ref: "User"
         }
       }
     ]

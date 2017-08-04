@@ -1,9 +1,12 @@
 var express = require("express");
 var router = express.Router();
+const Article = require("../models/article");
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("index", { title: "Express" });
+  Article.find().then(articles => {
+    res.render("index", { articles });
+  });
 });
 
 module.exports = router;
