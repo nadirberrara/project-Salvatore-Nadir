@@ -4,25 +4,22 @@ const { ensureLoggedIn } = require("connect-ensure-login");
 const multer = require("multer");
 const Article = require("../models/article");
 
-router.get("/read", ensureLoggedIn("/login"), (req, res, next) => {
-  res.render("articles/read");
+router.get("/read/:articleId", ensureLoggedIn("/login"), (req, res, next) => {
+  Article
+    .findById(req.params.articleId)
+    .populate("_creator")
+    .exec((err, article) => {
+      //console.log(article);
+      res.render("articles/read", {
+        article
+      });
+    });
 });
 
 router.get("/write", ensureLoggedIn("/login"), (req, res, next) => {
   res.render("articles/write");
 });
 
-router.get(
-  "/read/kebab-bonanza",
-  ensureLoggedIn("/login"),
-  (req, res, next) => {
-    res.render("articles/kebab-bonanza");
-  }
-);
-
-router.get("/read-dynamic", ensureLoggedIn("/login"), (req, res, next) => {
-  res.render("articles/read-dynamic");
-});
 
 // Route to upload from project base path
 var upload = multer({ dest: "./public/uploads/" });

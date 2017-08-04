@@ -153,7 +153,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/", index);
-app.use("/:name", profile);
+app.use("/", profile);
 app.use("/", auth);
 app.use("/", article);
 
