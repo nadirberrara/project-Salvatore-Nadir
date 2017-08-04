@@ -20,7 +20,6 @@
     "express-ejs-layouts": "^1.1.0",
     "express-session": "^1.15.4",
     "instagram-node": "^0.5.8",
-    "markdown": "^0.5.0",
     "moment": "^2.18.1",
     "mongo": "^0.1.0",
     "mongoose": "^4.11.5",
