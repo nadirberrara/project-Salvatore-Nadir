@@ -7,6 +7,10 @@ body {
   margin-bottom: 25px;
 }
 
+.img-profile {
+  /*margin: 10px;*/
+}
+
 a {
   color: #00b7ff;
 }
@@ -163,8 +167,17 @@ a {
 }
 
 .posted-photos {
+  width: 100%;
+  margin-top: 30px;
+  background-color: #f3f2f2;
   width: 80%;
   padding: 10px;
+}
+
+.posted-photos h3 {
+  margin: 30px;
+  margin-bottom: 50px;
+  text-decoration: underline;
 }
 
 .row {
@@ -269,6 +282,7 @@ a {
 
 .home-badge {
   text-align: center;
+  margin-top: 10px;
 }
 
 .home-img {
