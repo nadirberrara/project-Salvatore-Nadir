@@ -11,7 +11,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("./models/user");
-//const Article = require("./models/article");
+const Article = require("./models/article");
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
 // const multer = require("multer");
@@ -143,8 +143,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next) => {
-  console.log("SUPER KEBAB!!!!!!!!!!!!!!!");
   res.locals.user = req.user;
+  next();
+});
+
+app.use((req, res, next) => {
+  res.locals.article = req.article;
   next();
 });
 
