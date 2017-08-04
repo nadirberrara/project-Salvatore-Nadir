@@ -53,6 +53,8 @@
         <ul class="nav navbar-nav navbar-right">
 
           <% if (user) {%>
+            <li><a href="/profile"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+            <li><a href="/write"><span class="glyphicon glyphicon-pencil"></span> Write an article</a></li>
             <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
           <% } else { %>
             <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

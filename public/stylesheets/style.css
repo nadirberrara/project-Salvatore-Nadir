@@ -7,6 +7,10 @@ body {
   margin-bottom: 25px;
 }
 
+.img-profile {
+  /*margin: 10px;*/
+}
+
 a {
   color: #00b7ff;
 }
@@ -163,12 +167,27 @@ a {
 }
 
 .posted-photos {
+  width: 100%;
+  background-color: #f3f2f2;
   width: 80%;
   padding: 10px;
 }
 
+.posted-photos h2 {
+  margin: 30px;
+  margin-bottom: 50px;
+  text-decoration: underline;
+}
+
+.welcome-text {
+  margin: 30px;
+  font-size: 50px;
+  padding: 20px;
+}
+
 .row {
   margin-bottom: 10px;
+  position: relative;
 }
 
 #content {
@@ -269,6 +288,7 @@ a {
 
 .home-badge {
   text-align: center;
+  margin-top: 10px;
 }
 
 .home-img {
