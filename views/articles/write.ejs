@@ -2,7 +2,7 @@
 <div class="text-forms col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
   <div class="upload-img">
   </div>
-    <form action="/upload" method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="form-group">Upload your photo</label>
         <input type="file" name="photo">
@@ -15,7 +15,7 @@
       </br>
       <div class="form-group article-content">
         <label for="content">Content</label>
-        <input id="content" type="content" name="content" class="form-control" placeholder="write your article here">
+        <textarea id="content" name="content" class="form-control" placeholder="write your article here"></textarea>
       </div>
 
       <% if (typeof message != "undefined") { %>
